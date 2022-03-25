@@ -1,0 +1,43 @@
+@import "var"; // импорт для работы переменных
+/*---Базовые стили---*/
+html,
+body {
+	height: 100%;
+	font-family: $main-font;
+	font-size: 14px;
+	font-weight: 500;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.79;
+	letter-spacing: normal;
+	text-align: left;
+	color: #74797e;
+	a {
+		cursor: pointer;
+	}
+}
+img {
+	max-width: 100%; /* Чтобы картики не уходила за пределы родителя */
+}
+// скрываем крестик у поиска
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	display: none;
+}
+.wrapper {
+	min-height: 100vh;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.container {
+	max-width: calc(#{$maxWidthContainer + px} + 30px);
+	margin: 0 auto;
+	padding: 0 15px;
+	@media (max-width: 1024px) {
+		max-width: none;
+	}
+}

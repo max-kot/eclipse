@@ -1,0 +1,218 @@
+.header {
+	position: fixed;
+	width: 100%;
+	height: 70px;
+	z-index: 10;
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background:rgba(30, 3, 53, 0.7);
+		backdrop-filter: blur(5px); //!Эфект блюра
+		border-radius:0px 0px 8px 8px ;
+	}
+
+	&__logo {
+		z-index: 5;
+		height: 68px;
+		width: 68px;
+		padding: 5px;
+		opacity: 0.8;
+		transition: opacity 0.3s ease-in-out;
+		img{
+			width: 100%;
+		}
+		&:hover{
+			opacity: 1;
+			transition: opacity 0.3s ease-in-out;
+		}
+	}
+
+	&__menu {
+	}
+}
+/*=== Меню ===*/
+.menu {
+
+	&__btn {
+		display: none;
+	}
+
+	&__body {
+		display: flex;
+		align-items: center;
+	}
+
+	&__list {
+		display: flex;
+		align-items: center;
+		li{
+			padding: 21px 6px;
+			margin: 0 10px;
+			font-weight: 700;
+			color: #fff;
+			text-transform: uppercase;
+			border-top: 2px solid transparent; // ! Чтобы подпись не скакала
+			border-bottom: 2px solid transparent;
+			transition: color 0.3s ease-in-out;
+			transition: border 0.3s ease-in-out;
+		}
+		li:hover{
+			border-bottom: 2px solid #28C8C6;
+			color: #28C8C6;
+			transition: color 0.3s ease-in-out;
+			transition: border 0.3s ease-in-out;
+		}
+	}
+
+	&__link {
+	}
+
+	&__join-btn {
+		margin-left: 26px;
+		border-radius: 5px;
+		background-color: #a100ff;
+		padding: 15px 58px 15px 37px;
+		height: 52px;
+		font-size: 16px;
+		font-weight: 700;
+		color: #fff;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: color 0.3s ease-in-out;
+		transition: background 0.3s ease-in-out;
+		&::after{
+			content:"";
+			display: block;
+			background: url('../img/icon/arrow.svg') center/cover no-repeat;
+			position: absolute;
+			height: 16px;
+			width: 16px;
+			right: 20px;
+			transition: background 0.3s ease-in-out;
+		}
+		&:hover{
+			background: #fff;
+			color:#a100ff;
+			transition: color 0.3s ease-in-out;
+			transition: background 0.3s ease-in-out;
+			&::after{
+				background: url('../img/icon/arrow_purple.svg') center/cover no-repeat;
+				transition: background 0.3s ease-in-out;
+			}
+		}
+	}
+}
+
+body.lock{
+	overflow: hidden;
+}
+body._touch .menu__list > li {
+	display: flex;
+	align-items: center;
+}
+body._touch .menu__link {
+	flex: 1 1 auto; /* делаем меню на всю ширину */
+}
+/* Свойства применяться только для мобилбных экранов */
+@media (max-width: 769px) {
+	.header__container{
+		background: none;//!чтобы плашка не налаживалась на цвет фона хедера
+	}
+	/* Кнопка меню*/
+	.menu__btn {
+		z-index: 5;
+		display: block; /* Возращаем кнопку меню */
+		position: relative;
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+	}
+	.menu__btn span,
+	.menu__btn::before,
+	.menu__btn::after {
+		left: 0;
+		position: absolute;
+		height: 10%;
+		width: 100%;
+		transition: all 0.3s ease 0s;
+		background-color: #28C8C6;
+	}
+	.menu__btn::before,
+	.menu__btn::after {
+		content: "";
+	}
+	.menu__btn::before {
+		top: 0;
+	}
+	.menu__btn::after {
+		bottom: 0;
+	}
+	.menu__btn span {
+		top: 50%;
+		transform: scale(1) translate((0px, -50%));
+	}
+/*Анимируем кнопку меню*/
+	.menu__btn._active span {
+		transform: scale(0);
+	}
+	.menu__btn._active::before {
+		top: 50%;
+		transform: rotate(-45deg) translateY(-50%);
+	}
+	.menu__btn._active::after {
+		top: 50%;
+		transform: rotate(45deg) translateY(-50%);
+	}
+	/*Меню*/
+	.menu__body {
+		position: fixed;
+		top: 0;
+		right: -100%;
+		width: 100%;
+		height: 100vh;
+		background-color: rgba(30, 3, 53, 0.9);
+		padding: 70px 30px 30px 30px;
+		transition: right 0.3s ease 0s;
+		overflow: auto; /* чтобы был скролл при большом кол-ве пунктов меню*/
+		flex-direction: column;
+	}
+	.menu__body._active {
+		right: 0;
+	}
+	.menu__body::before {
+		/*плашка для шапки*/
+		content: "";
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		height: 70px; /*высота шапки*/
+		background:rgba(30, 3, 53, 0.5);
+		backdrop-filter: blur(5px); //!Эфект блюра
+		z-index: 2;
+	}
+	.menu__list {
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		padding: 0;
+		li {
+			padding: 10px 0px;
+			width: 100%;
+			display: flex; 
+			justify-content: center; 
+			align-items: center;
+			border-bottom-color: #fff;
+		}
+	}
+	
+	.menu__join-btn{
+		width: 100%;
+		margin: 0;
+		margin-top: 15px;
+		height: 52px;
+	}
+}

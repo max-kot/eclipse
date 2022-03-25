@@ -1,0 +1,128 @@
+.first {
+	height: 100%;
+	background: url('../img/header/bg.png') center/cover no-repeat;
+	&__container {
+		height: 100vh;
+		display: flex; 
+		justify-content: center; 
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	&__title {
+		font-weight: 700;
+		width: 45%;
+		font-size: 60px;
+		@include adaptive-value('font-size', 60, 45, 0);
+		font-family: 'Montserrat', sans-serif;
+		text-transform: uppercase;
+		line-height: 0.92;
+		color:#fff;
+		@include adaptive-value('margin-bottom', 40, 25, 0);
+	}
+
+	&__descr {
+		font-size: 16px;
+		line-height: 1.5;
+		color:#fff;
+		width: 45%;
+		@include adaptive-value('margin-bottom', 40, 20, 0);
+	}
+
+	&__form {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__field {
+		width: 282px;
+		height: 60px;
+		padding: 25px;
+		border-radius: 3px;
+		font-family: 'Montserrat', sans-serif;
+		line-height: 1.5;
+		color: rgba(51, 51, 51, 0.9);
+		margin-right: 17px;
+		&:focus{
+			border: 1px solid #28c8c6;
+			box-shadow: 0px  0px 20px 1px #20a7a4;
+		}
+	}
+
+	&__btn{	
+		width: 64px;
+		height: 59px;
+		background: #28c8c6;
+		border-radius: 5px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: background 0.3s ease-in-out;
+		&::after{
+			content:"";
+			display: block;
+			background: url('../img/icon/arrow.svg') center/cover no-repeat;
+			width: 16px;
+			height: 16px;
+			transition: background 0.3s ease-in-out;
+		}
+		&:hover{
+			background: #fff;
+			transition: background 0.3s ease-in-out;
+			&::after{
+				background: url('../img/icon/arrow_green.svg');
+				transition: background 0.3s ease-in-out;
+			}
+		}
+	}
+}
+.name-field {
+}
+.email-field {
+}
+.btn-text {
+	display: none;
+}
+@media (max-width: 1025px){
+	.first{
+		&__container {
+			height: 100%;
+			padding-top: 140px;
+			padding-bottom: 140px;
+			display: flex; justify-content: center; align-items: center;
+		}
+		&__title{
+			width: 100%;
+			text-align: center;
+		}
+		&__descr{
+			width: 100%;
+			text-align: center;
+		}
+		
+	}
+}
+@media (max-width: 769px){
+	.first{
+		&__form{
+			width: 100%;
+		}
+		&__field {
+			flex: 0 1 100%;
+			margin: 0;
+			margin-bottom: 20px;
+		}
+		&__btn{
+			width: 100%;
+			padding-left: 25px;
+		}
+	}
+	.btn-text {
+		display: block;
+		padding-right: 5px;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: #fff;
+		font-size: 16px;
+	}
+}
