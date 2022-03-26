@@ -3,13 +3,13 @@
 	width: 100%;
 	height: 70px;
 	z-index: 10;
+	background: rgba(30, 3, 53, 0.7);
+	backdrop-filter: blur(5px); //!Эфект блюра
 	&__container {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		background:rgba(30, 3, 53, 0.7);
-		backdrop-filter: blur(5px); //!Эфект блюра
-		border-radius:0px 0px 8px 8px ;
+		border-radius: 0px 0px 8px 8px;
 	}
 
 	&__logo {
@@ -19,10 +19,10 @@
 		padding: 5px;
 		opacity: 0.8;
 		transition: opacity 0.3s ease-in-out;
-		img{
+		img {
 			width: 100%;
 		}
-		&:hover{
+		&:hover {
 			opacity: 1;
 			transition: opacity 0.3s ease-in-out;
 		}
@@ -33,7 +33,6 @@
 }
 /*=== Меню ===*/
 .menu {
-
 	&__btn {
 		display: none;
 	}
@@ -46,7 +45,7 @@
 	&__list {
 		display: flex;
 		align-items: center;
-		li{
+		li {
 			padding: 21px 6px;
 			margin: 0 10px;
 			font-weight: 700;
@@ -57,9 +56,9 @@
 			transition: color 0.3s ease-in-out;
 			transition: border 0.3s ease-in-out;
 		}
-		li:hover{
-			border-bottom: 2px solid #28C8C6;
-			color: #28C8C6;
+		li:hover {
+			border-bottom: 2px solid #28c8c6;
+			color: #28c8c6;
 			transition: color 0.3s ease-in-out;
 			transition: border 0.3s ease-in-out;
 		}
@@ -83,30 +82,30 @@
 		justify-content: center;
 		transition: color 0.3s ease-in-out;
 		transition: background 0.3s ease-in-out;
-		&::after{
-			content:"";
+		&::after {
+			content: "";
 			display: block;
-			background: url('../img/icon/arrow.svg') center/cover no-repeat;
+			background: url("../img/icon/arrow.svg") center/cover no-repeat;
 			position: absolute;
 			height: 16px;
 			width: 16px;
 			right: 20px;
 			transition: background 0.3s ease-in-out;
 		}
-		&:hover{
+		&:hover {
 			background: #fff;
-			color:#a100ff;
+			color: #a100ff;
 			transition: color 0.3s ease-in-out;
 			transition: background 0.3s ease-in-out;
-			&::after{
-				background: url('../img/icon/arrow_purple.svg') center/cover no-repeat;
+			&::after {
+				background: url("../img/icon/arrow_purple.svg") center/cover no-repeat;
 				transition: background 0.3s ease-in-out;
 			}
 		}
 	}
 }
 
-body.lock{
+body.lock {
 	overflow: hidden;
 }
 body._touch .menu__list > li {
@@ -118,8 +117,8 @@ body._touch .menu__link {
 }
 /* Свойства применяться только для мобилбных экранов */
 @media (max-width: 769px) {
-	.header__container{
-		background: none;//!чтобы плашка не налаживалась на цвет фона хедера
+	.header__container {
+		background: none; //!чтобы плашка не налаживалась на цвет фона хедера
 	}
 	/* Кнопка меню*/
 	.menu__btn {
@@ -138,7 +137,7 @@ body._touch .menu__link {
 		height: 10%;
 		width: 100%;
 		transition: all 0.3s ease 0s;
-		background-color: #28C8C6;
+		background-color: #28c8c6;
 	}
 	.menu__btn::before,
 	.menu__btn::after {
@@ -154,7 +153,7 @@ body._touch .menu__link {
 		top: 50%;
 		transform: scale(1) translate((0px, -50%));
 	}
-/*Анимируем кнопку меню*/
+	/*Анимируем кнопку меню*/
 	.menu__btn._active span {
 		transform: scale(0);
 	}
@@ -190,7 +189,7 @@ body._touch .menu__link {
 		top: 0;
 		left: 0;
 		height: 70px; /*высота шапки*/
-		background:rgba(30, 3, 53, 0.5);
+		background: rgba(30, 3, 53, 0.5);
 		backdrop-filter: blur(5px); //!Эфект блюра
 		z-index: 2;
 	}
@@ -202,14 +201,14 @@ body._touch .menu__link {
 		li {
 			padding: 10px 0px;
 			width: 100%;
-			display: flex; 
-			justify-content: center; 
+			display: flex;
+			justify-content: center;
 			align-items: center;
 			border-bottom-color: #fff;
 		}
 	}
-	
-	.menu__join-btn{
+
+	.menu__join-btn {
 		width: 100%;
 		margin: 0;
 		margin-top: 15px;
