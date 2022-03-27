@@ -1226,8 +1226,190 @@ body._touch .menu__link {
 }
 
 .design {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: calc(80px + 20 * ((100vw - 320px) /1298));
+  padding-bottom: calc(30px + 70 * ((100vw - 320px) /1298));
   border: 1px solid #d8e0e8;
   background: #f6f9fa;
+}
+
+.design__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.design__title {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: calc(20px + 10 * ((100vw - 320px) /1298));
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  color: #333b42;
+  margin-bottom: calc(20px + 12 * ((100vw - 320px) /1298));
+}
+
+.design__descr {
+  text-align: center;
+  margin-bottom: calc(20px + 25 * ((100vw - 320px) /1298));
+}
+
+.gallery {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.gallery__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid #28c8c6;
+  margin-bottom: 50px;
+  margin-bottom: calc(20px + 30 * ((100vw - 320px) /1298));
+  width: 520px;
+}
+
+.gallery__item-link {
+  padding: 24px 30px;
+  color: #28c8c6;
+  text-transform: uppercase;
+}
+
+.gallery__item-link:first-child {
+  padding-left: 30px;
+}
+
+.gallery__item-link:last-child {
+  padding-right: 30px;
+}
+
+.gallery__item-link:hover {
+  background: #28c8c6;
+  color: #f6f9fa;
+}
+
+.gallery__column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 -10px;
+}
+
+.gallery__items {
+  padding: 0 10px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 33.333%;
+          flex: 0 1 33.333%;
+}
+
+.gallery__items:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.gallery__items:hover a {
+  color: #28c8c6;
+}
+
+.gallery__photo {
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+  border: 1px solid #d8e0e8;
+}
+
+.gallery__title {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.76;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  padding: 31px;
+  background: #fff;
+  border-radius: 0 0 8px 8px;
+  border: 1px solid #d8e0e8;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gallery__title::after {
+  content: "";
+  display: inline-block;
+  background: url("../img/icon/arrow-one.svg") center/cover no-repeat;
+  width: 8px;
+  height: 14px;
+  margin-left: 46px;
+}
+
+@media (max-width: 769px) {
+  .gallery {
+    display: block;
+    text-align: center;
+  }
+  .gallery__links {
+    display: block;
+    width: 100%;
+  }
+  .gallery__column {
+    display: block;
+  }
+  .gallery__items {
+    padding: 0;
+  }
+  .gallery__items img {
+    width: 100%;
+  }
+  .gallery__items:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  .gallery__items:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  .gallery__items:hover a {
+    color: #28c8c6;
+  }
 }
