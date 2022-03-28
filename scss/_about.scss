@@ -59,6 +59,13 @@
 		background: url("../img/icon/arrow-down_grey.svg") center/contain no-repeat;
 		width: 33px;
 		height: 33px;
+		opacity: 0.8;
+		transition: transform 0.3s ease-in-out;
+		&:hover {
+			opacity: 1;
+			transform: translateY(-15px);
+			transition: transform 0.3s ease-in-out;
+		}
 	}
 }
 .arrow-bottom {
@@ -67,6 +74,13 @@
 		background: url("../img/icon/arrow-down_white.svg") center/contain no-repeat;
 		width: 33px;
 		height: 33px;
+		opacity: 0.8;
+		transition: transform 0.3s ease-in-out;
+		&:hover {
+			opacity: 1;
+			transform: translateY(-15px);
+			transition: transform 0.3s ease-in-out;
+		}
 	}
 }
 
@@ -158,6 +172,13 @@
 		background: url("../img/icon/arrow-down_grey.svg") center/contain no-repeat;
 		width: 33px;
 		height: 33px;
+		opacity: 0.8;
+		transition: transform 0.3s ease-in-out;
+		&:hover {
+			opacity: 1;
+			transform: translateY(-5px);
+			transition: transform 0.3s ease-in-out;
+		}
 	}
 }
 @media (max-width: 1024px) {

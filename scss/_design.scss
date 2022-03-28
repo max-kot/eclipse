@@ -50,6 +50,7 @@
 		padding: 24px 30px;
 		color: #28c8c6;
 		text-transform: uppercase;
+		transition: background 0.3s ease-in-out;
 		&:first-child {
 			padding-left: 30px;
 		}
@@ -59,6 +60,7 @@
 		&:hover {
 			background: #28c8c6;
 			color: #f6f9fa;
+			transition: background 0.3s ease-in-out;
 		}
 	}
 
@@ -75,8 +77,10 @@
 	&__items {
 		padding: 0 10px;
 		flex: 0 1 33.333%;
+		transition: transform 0.3s ease-in-out;
 		&:hover {
 			transform: scale(1.1);
+			transition: transform 0.3s ease-in-out;
 			a {
 				color: #28c8c6;
 			}
